@@ -30,9 +30,9 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  id = (id + 2) % id_max;
+  id = (id + 4) % id_max;
 
-  CAN.beginPacket(id);
+  CAN.beginPacket(id+0);
   CAN.write('H');
   CAN.write('e');
   CAN.write('l');
@@ -40,12 +40,11 @@ void loop() {
   CAN.write('o');
   CAN.endPacket();
 
-  CAN.beginPacket(id+1);
-  CAN.write('W');
-  CAN.write('o');
-  CAN.write('r');
-  CAN.write('l');
-  CAN.write('d');
+  CAN.beginPacket(id+2);
+  CAN.write('E');
+  CAN.write('v');
+  CAN.write('e');
+  CAN.write('n');
   CAN.endPacket();
 
   Serial.println("...Hello World sent!");
